@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Buscar - Aura Streetware</title>
+<link href="img-aura/favicon.png" rel="icon" type="image/png"/>
+
+<link href="../style.css" rel="stylesheet"/></head>
+<body>
+<h1>O que você está procurando?</h1>
+<input id="campoBusca" oninput="filtrarProdutos()" placeholder="Digite o nome do produto..." type="text"/>
+<div class="produtos" id="listaProdutos">
+<!-- Produtos -->
+<a class="produto" href="comprar/comprar-nike.html">
+<img alt="Nike Esportiva" src="img-aura/camisa1.jpeg"/>
+<h3>Camiseta Nike Esportiva</h3>
+<p class="preco">R$ 64,90</p>
+</a>
+<a class="produto" href="comprar/comprar-polo.html">
+<img alt="Polo Premium" src="img-aura/polo1.jpeg"/>
+<h3>Camisa Polo Premium</h3>
+<p class="preco">R$ 74,90</p>
+</a>
+<a class="produto" href="comprar/comprar camiseta ronaldinho.html">
+<img alt="Ronaldinho" src="img-aura/ronaldinho.jpeg"/>
+<h3>Camiseta Ronaldinho Clássica</h3>
+<p class="preco">R$ 74,90</p>
+</a>
+<a class="produto" href="comprar/comprar-shorts.html">
+<img alt="Shorts" src="img-aura/shorts.jpeg"/>
+<h3>Shorts Moda Aura</h3>
+<p class="preco">R$ 45,90</p>
+</a>
+</div>
+<a class="voltar" href="Aura-streetwear - Copia.html">← Voltar para a loja</a>
+<script>
+    function filtrarProdutos() {
+      const termo = document.getElementById('campoBusca').value.toLowerCase();
+      const produtos = document.querySelectorAll('.produto');
+
+      produtos.forEach(produto => {
+        const nome = produto.querySelector('h3').textContent.toLowerCase();
+        produto.style.display = nome.includes(termo) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
